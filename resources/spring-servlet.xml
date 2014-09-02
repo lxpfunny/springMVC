@@ -12,6 +12,14 @@
        <!-- 设置使用注解的类所在的jar包 -->
     	<context:component-scan base-package="controller"></context:component-scan>
     	
+		    	<!-- 处理定义在method上的请求映射 -->
+			<bean
+				class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
+			<!-- 处理定义在controller类上的请求映射 -->
+			<bean
+				class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping" />
+    	
+    	
     	<!-- 完成请求和注解POJO的映射 -->
     <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter" />
     
